@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="220dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal|top"
     android:orientation="vertical"
     android:translationY="120dp"
@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="350dp"
-        android:layout_height="226dp"
+        android:layout_height="220dp"
         android:layout_gravity="center"
         android:contentDescription="@string/sale"
         android:scaleType="centerCrop"
