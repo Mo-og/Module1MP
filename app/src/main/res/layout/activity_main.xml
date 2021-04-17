@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -21,12 +22,38 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
-
             android:layout_height="?attr/actionBarSize"
             android:background="#FFFFFF"
             app:menu="@menu/top_app_bar"
+            app:title="@string/page_title"
+            app:titleCentered="true" />
 
-            app:title="@string/page_title" />
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="@color/toolbar_colors"
+            app:tabIndicatorColor="@color/black">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toolbar_men" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toolbar_women" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toolbar_kids" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toolbar_lifestyle" />
+        </com.google.android.material.tabs.TabLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
