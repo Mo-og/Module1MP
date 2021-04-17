@@ -9,16 +9,16 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 
 
-public class WintersunFragment extends Fragment {
+public class Sale1Fragment extends Fragment {
 
-    public WintersunFragment() {
+    public Sale1Fragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_base, container, false);
         ImageView img = view.findViewById(R.id.image);
-        img.setImageResource(R.drawable.wintersun);
+        img.setImageResource(R.drawable.sale1);
         return view;
     }
 }

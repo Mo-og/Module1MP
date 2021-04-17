@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".InsomniumFragment">
+    android:layout_width="wrap_content"
+    android:layout_height="220dp"
+    android:orientation="vertical"
+    android:translationY="200dp"
+    tools:context=".Sale1Fragment">
 
     <ImageView
+        android:contentDescription="@string/sale"
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="226dp"
         android:scaleType="centerCrop"
-        tools:src="@drawable/insomnium" />
+        tools:src="@drawable/sale1" />
 
-</FrameLayout>
+</LinearLayout>

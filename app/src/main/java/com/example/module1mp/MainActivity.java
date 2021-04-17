@@ -6,17 +6,11 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.example.module1mp.BelakorFragment;
-import com.example.module1mp.InsomniumFragment;
-import com.example.module1mp.WintersunFragment;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -43,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         //appBarTitle.setTypeface(t);
 
         Adapter adapter = new Adapter(this);
-        adapter.addFragment(new WintersunFragment());
-        adapter.addFragment(new InsomniumFragment());
-        adapter.addFragment(new BelakorFragment());
+        adapter.addFragment(new Sale1Fragment());
+        adapter.addFragment(new Sale2Fragment());
+        adapter.addFragment(new Sale3Fragment());
         viewPager.setAdapter(adapter);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {

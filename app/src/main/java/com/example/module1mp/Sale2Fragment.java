@@ -8,17 +8,17 @@ import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
-public class InsomniumFragment extends Fragment {
+public class Sale2Fragment extends Fragment {
 
-    public static InsomniumFragment newInstance() {
-        return new InsomniumFragment();
+    public static Sale2Fragment newInstance() {
+        return new Sale2Fragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_base, container, false);
         ImageView img = view.findViewById(R.id.image);
-        img.setImageResource(R.drawable.insomnium);
+        img.setImageResource(R.drawable.sale2);
         return view;
     }
 
