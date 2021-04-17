@@ -6,13 +6,17 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.example.module1mp.BelakorFragment;
 import com.example.module1mp.InsomniumFragment;
 import com.example.module1mp.WintersunFragment;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNavigationView;
+    private TextView appBarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.container);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        //appBarTitle = findViewById(R.id.app_bar_title);
+        //Typeface t = Typeface.createFromAsset(getAssets(), "fonts/PlayfairDisplay-Regular.ttf");
+        //appBarTitle.setTypeface(t);
 
         Adapter adapter = new Adapter(this);
         adapter.addFragment(new WintersunFragment());
