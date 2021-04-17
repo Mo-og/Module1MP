@@ -29,13 +29,18 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabMode="fixed"
             app:tabTextColor="@color/toolbar_colors"
-            app:tabIndicatorColor="@color/black">
+            app:tabIndicatorColor="@color/black"
+            app:tabMaxWidth="95dp"
+            app:tabMinWidth="70dp"
+            >
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/toolbar_men" />
+                android:text="@string/toolbar_men"
+                />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
