@@ -37,7 +37,7 @@ public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ElementW
     @Override
     public void onBindViewHolder(@NonNull ElementWrapper holder, int i) {
         holder.image.setImageTintList(ColorStateList.valueOf(list.get(i).getColor()));
-        holder.text.setText(String.format((String.valueOf(list.get(i).getNumber()))));
+        holder.text.setText(list.get(i).getText());
     }
 
     @Override

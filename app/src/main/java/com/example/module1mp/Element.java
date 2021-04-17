@@ -3,14 +3,19 @@ package com.example.module1mp;
 import android.graphics.Color;
 
 public class Element {
-    private int number;
-    private int color= Color.argb(155,200,200,200);
+    private String text;
+    private final int color = Color.argb(155, 200, 200, 200);
 
-    public Element(int number) {
-        this.number = number;
+    public Element(String text) {
+        this.text = text;
     }
-    public int getNumber() {
-        return number;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public int getColor() {

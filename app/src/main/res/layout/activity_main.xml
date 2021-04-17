@@ -56,25 +56,25 @@
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginTop="120dp"
-        android:layout_marginBottom="80dp">
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/category_text_view"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:text="@string/shop_by_category"
-            android:textSize="26sp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="-110dp"
-            android:layout_gravity="center_horizontal"/>
+            android:text="@string/shop_by_category"
+            android:textSize="26sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
 
-             />
+            />
 
     </LinearLayout>
 

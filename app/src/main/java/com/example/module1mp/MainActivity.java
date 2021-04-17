@@ -1,5 +1,6 @@
 package com.example.module1mp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -8,11 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -48,15 +47,42 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Sale3Fragment());
         viewPager.setAdapter(adapter);
 
-        for (int j = 0; j < 8; j++)
-            list.add(new Element(j+1));
-
+        for (int j = 0; j < 8; j++) {
+            Element element = new Element("?");
+            switch (j + 1) {
+                case 1:
+                    element.setText("Sweater");
+                    break;
+                case 2:
+                    element.setText("Jackets");
+                    break;
+                case 3:
+                    element.setText("Shirts");
+                    break;
+                case 4:
+                    element.setText("T-Shirts");
+                    break;
+                case 5:
+                    element.setText("Pants");
+                    break;
+                case 6:
+                    element.setText("Shoes");
+                    break;
+                case 7:
+                    element.setText("Bags");
+                    break;
+                case 8:
+                    element.setText("Accessories");
+                    break;
+            }
+            list.add(element);
+        }
         recyclerView = findViewById(R.id.recycler);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
         recyclerView.setLayoutManager(gridLayoutManager);
         elementAdapter = new ElementAdapter(getApplicationContext(), list, el -> {
             int index = recyclerView.getChildLayoutPosition(el);
-            String s = "Category "+ list.get(index).getNumber() +" clicked!";
+            String s = "Category " + list.get(index).getText() + " clicked!";
             Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
         });
         recyclerView.setAdapter(elementAdapter);
@@ -75,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             return true;
-        });*/
+        });
 
-        /*viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 switch (position) {
@@ -107,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
+        @NonNull
         public Fragment createFragment(int position) {
             return list.get(position);
         }
