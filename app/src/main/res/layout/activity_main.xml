@@ -7,12 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,18 +23,16 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="fixed"
-            app:tabTextColor="@color/toolbar_colors"
             app:tabIndicatorColor="@color/black"
             app:tabMaxWidth="95dp"
             app:tabMinWidth="70dp"
-            >
+            app:tabMode="fixed"
+            app:tabTextColor="@color/toolbar_colors">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/toolbar_men"
-                />
+                android:text="@string/toolbar_men" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -60,10 +52,39 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+    <LinearLayout
+        android:id="@+id/relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="80dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/category_text_view"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:text="@string/shop_by_category"
+            android:textSize="26sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="-110dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+             />
+
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

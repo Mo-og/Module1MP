@@ -3,13 +3,17 @@ package com.example.module1mp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNavigationView;
-    private TextView appBarTitle;
+    private RecyclerView recyclerView;
+    private ElementAdapter elementAdapter;
+    private List<Element> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +48,21 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Sale3Fragment());
         viewPager.setAdapter(adapter);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+        for (int j = 0; j < 8; j++)
+            list.add(new Element(j+1));
+
+        recyclerView = findViewById(R.id.recycler);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        elementAdapter = new ElementAdapter(getApplicationContext(), list, el -> {
+            int index = recyclerView.getChildLayoutPosition(el);
+            String s = "Category "+ list.get(index).getNumber() +" clicked!";
+            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+        });
+        recyclerView.setAdapter(elementAdapter);
+        recyclerView.setTranslationY(300);
+
+       /* bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:
                     viewPager.setCurrentItem(0, true);
@@ -55,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             return true;
-        });
+        });*/
 
-        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        /*viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 switch (position) {
@@ -72,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
             }
-        });
+        });*/
     }
 
     private class Adapter extends FragmentStateAdapter {
